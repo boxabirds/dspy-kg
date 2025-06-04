@@ -1,0 +1,36 @@
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+:AIWritingTool a owl:Class .
+:Feature a owl:Class .
+:PricingPlan a owl:Class .
+:Company a owl:Class .
+
+:hasFeature a rdf:Property ;
+    rdfs:domain :AIWritingTool ;
+    rdfs:range :Feature .
+
+:offers a rdf:Property ;
+    rdfs:domain :Company ;
+    rdfs:range :AIWritingTool .
+
+:monthlyPrice a rdf:Property ;
+    rdfs:domain :PricingPlan ;
+    rdfs:range xsd:decimal .
+
+:hasPricingPlan a rdf:Property ;
+    rdfs:domain :AIWritingTool ;
+    rdfs:range :PricingPlan .
+
+:developedBy a rdf:Property ;
+    rdfs:domain :AIWritingTool ;
+    rdfs:range :Company .
+
+:UserEngagement a owl:Class ;
+    rdfs:subClassOf :AIWritingTool .
+
+:MarketingTool a owl:Class ;
+    rdfs:subClassOf :AIWritingTool .

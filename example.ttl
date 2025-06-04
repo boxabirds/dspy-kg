@@ -1,0 +1,27 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:AmazonRainforest rdf:type ex:EnvironmentalEntity ;
+    rdfs:label "Amazon Rainforest" ;
+    ex:hasRole ex:ClimateRegulator ;
+    ex:absorbsCO2 "2 billion tons" ;
+    ex:homeToSpecies "10% of all species on Earth" .
+
+ex:Deforestation rdf:type ex:EnvironmentalIssue ;
+    rdfs:label "Deforestation" ;
+    ex:occursIn ex:Brazil ;
+    ex:hasImpact ex:IncreasedGreenhouseGasEmissions, ex:ThreatToBiodiversity ;
+    ex:areaLost "13,000 square kilometers in 2021" .
+
+ex:ClimateRegulator rdf:type ex:Role ;
+    rdfs:label "Climate Regulator" .
+
+ex:IncreasedGreenhouseGasEmissions rdf:type ex:Impact ;
+    rdfs:label "Increased Greenhouse Gas Emissions" .
+
+ex:ThreatToBiodiversity rdf:type ex:Impact ;
+    rdfs:label "Threat to Biodiversity" .
+
+ex:Brazil rdf:type ex:Location ;
+    rdfs:label "Brazil" .

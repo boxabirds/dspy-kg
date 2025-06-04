@@ -1,0 +1,94 @@
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# This file imports the schema
+<> owl:imports <./ai-writing-tools-schema.ttl> .
+
+### All Instance Data ###
+
+### From https://grammarly.com ###
+
+:Grammarly a :UserEngagement ;
+    :hasFeature :WritingSuggestions, :TextConciseness, :ToneAdjustment ;
+    :hasPricingPlan :FreePlan, :ProPlan, :EnterprisePlan ;
+    :developedBy :GrammarlyInc ;
+    prov:wasDerivedFrom <https://grammarly.com> .
+
+:WritingSuggestions a :Feature ;
+    rdfs:label "Writing Suggestions" .
+
+:TextConciseness a :Feature ;
+    rdfs:label "Text Conciseness" .
+
+:ToneAdjustment a :Feature ;
+    rdfs:label "Tone Adjustment" .
+
+:FreePlan a :PricingPlan ;
+    :monthlyPrice "0"^^xsd:decimal ;
+    rdfs:label "Free Plan" .
+
+:ProPlan a :PricingPlan ;
+    :monthlyPrice "12"^^xsd:decimal ;
+    rdfs:label "Pro Plan" .
+
+:EnterprisePlan a :PricingPlan ;
+    rdfs:label "Enterprise Plan" .
+
+:GrammarlyInc a :Company ;
+    rdfs:label "Grammarly Inc." .
+
+### From https://jasper.ai ###
+
+:jasper a :UserEngagement ;
+    :hasFeature :marketingEditor, :brandVoice, :styleGuide, :jasperChat, :aiImageSuite ;
+    :hasPricingPlan :basicPlan ;
+    :developedBy :jasperCompany ;
+    prov:wasDerivedFrom <https://jasper.ai> .
+
+:marketingEditor a :Feature ;
+    rdfs:label "Marketing Editor" .
+
+:brandVoice a :Feature ;
+    rdfs:label "Brand Voice" .
+
+:styleGuide a :Feature ;
+    rdfs:label "Style Guide" .
+
+:jasperChat a :Feature ;
+    rdfs:label "Jasper Chat" .
+
+:aiImageSuite a :Feature ;
+    rdfs:label "AI Image Suite" .
+
+:basicPlan a :PricingPlan ;
+    :monthlyPrice "29.99"^^xsd:decimal .
+
+:jasperCompany a :Company ;
+    rdfs:label "Jasper AI, INC." .
+
+### From https://copy.ai ###
+
+:CopyAI a :Company ;
+    rdfs:label "Copy.ai" .
+
+:GTM_AI_Platform a :UserEngagement ;
+    rdfs:label "GTM AI Platform" ;
+    :hasFeature :ContentCreation, :InboundLeadProcessing, :AccountBasedMarketing ;
+    :developedBy :CopyAI ;
+    prov:wasDerivedFrom <https://copy.ai> .
+
+:ContentCreation a :Feature ;
+    rdfs:label "Content Creation" ;
+    rdfs:comment "Power your content engine with AI — SEO, thought leadership, use cases, social, and more." .
+
+:InboundLeadProcessing a :Feature ;
+    rdfs:label "Inbound Lead Processing" ;
+    rdfs:comment "Automatically enrich, research, and engage your marketing generated leads in seconds." .
+
+:AccountBasedMarketing a :Feature ;
+    rdfs:label "Account Based Marketing" ;
+    rdfs:comment "Get rich insights on accounts, industries, and personas to inform ABM plays." .

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/AmazonRainforest">
+    <rdf:type rdf:resource="http://example.org/EnvironmentalEntity"/>
+    <rdfs:label>Amazon Rainforest</rdfs:label>
+    <ex:hasRole rdf:resource="http://example.org/ClimateRegulator"/>
+    <ex:absorbsCO2>2 billion tons</ex:absorbsCO2>
+    <ex:homeToSpecies>10% of all species on Earth</ex:homeToSpecies>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ClimateRegulator">
+    <rdf:type rdf:resource="http://example.org/Role"/>
+    <rdfs:label>Climate Regulator</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ThreatToBiodiversity">
+    <rdf:type rdf:resource="http://example.org/Impact"/>
+    <rdfs:label>Threat to Biodiversity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/IncreasedGreenhouseGasEmissions">
+    <rdf:type rdf:resource="http://example.org/Impact"/>
+    <rdfs:label>Increased Greenhouse Gas Emissions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Deforestation">
+    <rdf:type rdf:resource="http://example.org/EnvironmentalIssue"/>
+    <rdfs:label>Deforestation</rdfs:label>
+    <ex:occursIn rdf:resource="http://example.org/Brazil"/>
+    <ex:hasImpact rdf:resource="http://example.org/IncreasedGreenhouseGasEmissions"/>
+    <ex:hasImpact rdf:resource="http://example.org/ThreatToBiodiversity"/>
+    <ex:areaLost>13,000 square kilometers in 2021</ex:areaLost>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Brazil">
+    <rdf:type rdf:resource="http://example.org/Location"/>
+    <rdfs:label>Brazil</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

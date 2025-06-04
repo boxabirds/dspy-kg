@@ -1,0 +1,37 @@
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# This instance file imports the schema
+<> owl:imports <./ai-writing-tools-schema.ttl> .
+
+# Instance data that conforms to the imported schema
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:jasper a :UserEngagement ;
+    :hasFeature :marketingEditor, :brandVoice, :styleGuide, :jasperChat, :aiImageSuite ;
+    :hasPricingPlan :basicPlan ;
+    :developedBy :jasperCompany ;
+    prov:wasDerivedFrom <https://jasper.ai> .
+
+:marketingEditor a :Feature ;
+    rdfs:label "Marketing Editor" .
+
+:brandVoice a :Feature ;
+    rdfs:label "Brand Voice" .
+
+:styleGuide a :Feature ;
+    rdfs:label "Style Guide" .
+
+:jasperChat a :Feature ;
+    rdfs:label "Jasper Chat" .
+
+:aiImageSuite a :Feature ;
+    rdfs:label "AI Image Suite" .
+
+:basicPlan a :PricingPlan ;
+    :monthlyPrice "29.99"^^xsd:decimal .
+
+:jasperCompany a :Company ;
+    rdfs:label "Jasper AI, INC." .

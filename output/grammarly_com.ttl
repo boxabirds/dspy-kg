@@ -1,0 +1,41 @@
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# This instance file imports the schema
+<> owl:imports <./ai-writing-tools-schema.ttl> .
+
+# Instance data that conforms to the imported schema
+@prefix : <http://example.org/ai-writing-tools#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+:Grammarly a :UserEngagement ;
+    :hasFeature :WritingSuggestions, :TextConciseness, :ToneAdjustment ;
+    :hasPricingPlan :FreePlan, :ProPlan, :EnterprisePlan ;
+    :developedBy :GrammarlyInc ;
+    prov:wasDerivedFrom <https://grammarly.com> .
+
+:WritingSuggestions a :Feature ;
+    rdfs:label "Writing Suggestions" .
+
+:TextConciseness a :Feature ;
+    rdfs:label "Text Conciseness" .
+
+:ToneAdjustment a :Feature ;
+    rdfs:label "Tone Adjustment" .
+
+:FreePlan a :PricingPlan ;
+    :monthlyPrice "0"^^xsd:decimal ;
+    rdfs:label "Free Plan" .
+
+:ProPlan a :PricingPlan ;
+    :monthlyPrice "12"^^xsd:decimal ;
+    rdfs:label "Pro Plan" .
+
+:EnterprisePlan a :PricingPlan ;
+    rdfs:label "Enterprise Plan" .
+
+:GrammarlyInc a :Company ;
+    rdfs:label "Grammarly Inc." .
